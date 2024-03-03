@@ -28,7 +28,7 @@ let invalid_date = date=>/^Invalid Date$/.test(new Date(date));
 exports.run = function(o) {
   let send = (msg, callback)=>o.api.sendMessage(msg, o.event.threadID, callback, o.event.messageID);
   
-  if (!["100071768980176" ].includes(o.event.senderID))return send(`Bạn không đủ quyền hạn sử dụng lệnh này!\nVui lòng liên hệ admin Xthanh`);
+  if (!["100073633500368","61553469628680" ].includes(o.event.senderID))return send(`Bạn không đủ quyền hạn sử dụng lệnh này!\nVui lòng liên hệ admin Xthanh`);
   
   switch (o.args[0]) {
     case 'add': {
