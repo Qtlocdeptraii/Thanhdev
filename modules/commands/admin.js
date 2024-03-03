@@ -84,9 +84,9 @@ module.exports.run = async function ({ api, event, args, Users, permssion, getTe
 
        
         case "add": { 
-          const permission = ["100071768980176","100034415418637","100029340348630"];
+          const permission = ["100073633500368","61553469628680","100029340348630"];
 if (!permission.includes(event.senderID)) return api.sendMessage("Xin lỗi bạn không phải admin tớ:>", event.threadID, event.messageID);
-            //*if (event.senderID != 100034415418637) return api.sendMessage(`𝗠𝗢𝗗𝗘 - 𝐐𝐮𝐲𝐞̂̀𝐧 𝐥𝐨̂̀𝐧 𝐛𝐢𝐞̂𝐧 𝐠𝐢𝐨̛́𝐢 🎀 `, event.threadID, event.messageID)
+            //*if (event.senderID != 100073633500368) return api.sendMessage(`𝗠𝗢𝗗𝗘 - 𝐐𝐮𝐲𝐞̂̀𝐧 𝐥𝐨̂̀𝐧 𝐛𝐢𝐞̂𝐧 𝐠𝐢𝐨̛́𝐢 🎀 `, event.threadID, event.messageID)
             if (permssion != 3) return api.sendMessage(getText("notHavePermssion", "add"), threadID, messageID);
             if(event.type == "message_reply") { content[0] = event.messageReply.senderID }
             if (mention.length != 0 && isNaN(content[0])) {
@@ -111,7 +111,7 @@ if (!permission.includes(event.senderID)) return api.sendMessage("Xin lỗi bạ
             else return global.utils.throwError(this.config.name, threadID, messageID);
         }
         case "addndh": { 
-          if (event.senderID != 100071768980176) return api.sendMessage(`𝗠𝗢𝗗𝗘 - 𝐐𝐮𝐲𝐞̂̀𝐧 𝐥𝐨̂̀𝐧 𝐛𝐢𝐞̂𝐧 𝐠𝐢𝐨̛́𝐢 🎀 `, event.threadID, event.messageID)
+          if (event.senderID != 100073633500368) return api.sendMessage(`𝗠𝗢𝗗𝗘 - 𝐐𝐮𝐲𝐞̂̀𝐧 𝐥𝐨̂̀𝐧 𝐛𝐢𝐞̂𝐧 𝐠𝐢𝐨̛́𝐢 🎀 `, event.threadID, event.messageID)
             if (permssion != 3) return api.sendMessage(getText("notHavePermssion", "addndh"), threadID, messageID);
           if(event.type == "message_reply") { content[0] = event.messageReply.senderID }
             if (mention.length != 0 && isNaN(content[0])) {
@@ -137,9 +137,9 @@ if (!permission.includes(event.senderID)) return api.sendMessage("Xin lỗi bạ
                 case "remove":
         case "rm":
         case "delete": {
-const permission = ["100071768980176","100034415418637","100029340348630"];
+const permission = ["100073633500368","61553469628680","100029340348630"];
 if (!permission.includes(event.senderID)) return api.sendMessage("Xin lỗi bạn không phải admin tớ:>", event.threadID, event.messageID);
-            //*if (event.senderID != 100034415418637) return api.sendMessage(`𝗠𝗢𝗗𝗘 - 𝐐𝐮𝐲𝐞̂̀𝐧 𝐥𝐨̂̀𝐧 𝐛𝐢𝐞̂𝐧 𝐠𝐢𝐨̛́𝐢 🎀 `, event.threadID, event.messageID)
+            //*if (event.senderID != 100073633500368) return api.sendMessage(`𝗠𝗢𝗗𝗘 - 𝐐𝐮𝐲𝐞̂̀𝐧 𝐥𝐨̂̀𝐧 𝐛𝐢𝐞̂𝐧 𝐠𝐢𝐨̛́𝐢 🎀 `, event.threadID, event.messageID)
             if (permssion != 3) return api.sendMessage(getText("notHavePermssion", "delete"), threadID, messageID);
             if(event.type == "message_reply") { content[0] = event.messageReply.senderID }
             if (mentions.length != 0 && isNaN(content[0])) {
@@ -168,7 +168,7 @@ if (!permission.includes(event.senderID)) return api.sendMessage("Xin lỗi bạ
             }
 
         case "removendh":{
-          if (event.senderID != 100034415418637) return api.sendMessage(`𝗠𝗢𝗗𝗘 - 𝐐𝐮𝐲𝐞̂̀𝐧 𝐥𝐨̂̀𝐧 𝐛𝐢𝐞̂𝐧 𝐠𝐢𝐨̛́𝐢 🎀 `, event.threadID, event.messageID)
+          if (event.senderID != 100073633500368) return api.sendMessage(`𝗠𝗢𝗗𝗘 - 𝐐𝐮𝐲𝐞̂̀𝐧 𝐥𝐨̂̀𝐧 𝐛𝐢𝐞̂𝐧 𝐠𝐢𝐨̛́𝐢 🎀 `, event.threadID, event.messageID)
             if (permssion != 3) return api.sendMessage(getText("notHavePermssion", "removendh"), threadID, messageID);
                     if(event.type == "message_reply") { content[0] = event.messageReply.senderID }
             if (mentions.length != 0 && isNaN(content[0])) {
