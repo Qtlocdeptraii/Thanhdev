@@ -1,41 +1,12 @@
-const coins = "5000000"
 module.exports.config = {
-    name: "spam",
-    version: "1.0.5",
-    hasPermssion: 0,
-    credits: "Dũngkon",//đổi credits làm chó 
-    description: "Spam sms hoặc call",
-    commandCategory: "Tiện ích",
-    usages: "spam sđt | số lần | time delay",
-    cooldowns: 55
-};
-module.exports.run = async function({ api, event, args, Currencies, Users }) {
-  if(this.config.credits !== 'Dũngkon') return api.sendMessage('Đã bảo đừng thay credits rồi mà không nghe, thay lại credits ngay không là đéo dùng được đâu nha', event.threadID, event.messageID);
-  var data = await Currencies.getData(event.senderID);
-  var money = data.money
-  const moneyUser = (await Currencies.getData(event.senderID)).money;
-  const axios = require('axios');
-    var list_id = [];
-  const sdt = args.join(" ").trim().replace(/\s+/g, " ").replace(/(\s+\|)/g, "|").replace(/\|\s+/g, "|").split("|")[0] 
-  const solan = args.join(" ").trim().replace(/\s+/g, " ").replace(/(\s+\|)/g, "|").replace(/\|\s+/g, "|").split("|")[1]
-  const delay = args.join(" ").trim().replace(/\s+/g, " ").replace(/(\s+\|)/g, "|").replace(/\|\s+/g, "|").split("|")[2]
-        if (!sdt) return api.sendMessage(`Thiếu số điện thoại\n----------\nvui lòng nhập theo định dạng\n----------\n spam số điện thoại | số lần | delay\nvd : /spam 0123456789 | 10 | 5\nVui lòng chờ 55s tiếp theo để sử dụng lệnh !`, event.threadID, event.messageID);
-        if(!solan) return api.sendMessage(`Thiếu số lần\n----------\nvui lòng nhập theo định dạng\n----------\n spam số điện thoại | số lần | delay\nVd : 0123456789 | 10 | 5 Vui lòng chờ 55s tiếp theo để sử dụng lệnh !`,event.threadID, event.messageID);
-        if(!delay) return api.sendMessage(`Thiếu time delay\n----------\nvui lòng nhập theo định dạng\n----------\n spam số điện thoại | số lần | delay`,event.threadID, event.messageID);
-        if (coins > moneyUser) return api.sendMessage(`Bạn không đủ ${coins} coins để dùng lệnh\nDùng lệnh /work để kiếm tiền\nHiện tại bạn đang có ${moneyUser} coins`, event.threadID, event.messageID);
-        if (solan > 10 || solan == 11) return api.sendMessage("Số lần không được quá 10 lần", event.threadID)
-        if (sdt == 0867470828 || sdt == 0976735547 || sdt == 0367281079 ) return api.sendMessage("Không thể spam số admin Xthanh", event.threadID)
-        if (delay == 0.5 || delay == 1 ) return api.sendMessage("Không thể spam dưới delay 5", event.threadID)
-              api.sendMessage(`⚙Đang tiến hành spam\n\n📱Số điện thoại: ${sdt}\n\n✍️Số lần: ${solan}\n\n⏱Time delay: ${delay}\n\n👥Người thực thi lệnh: ${(await Users.getData(event.senderID)).name}\nĐã trừ 5000000$ cho 1 lần sử dụng! \nVui lòng chờ 55s tiếp theo để sử dụng lệnh !!`, event.threadID)
-         var data = await global.utils.getContent(`https://spamsmsv1.thanhdev.repl.co/spam?sdt=${sdt}&luot=${solan}&delay=${delay}`)
-            console.log(data)
-        let noti = data.data.message;
-        let tong = data.data.totalCallApi;
-        let thanhcong = data.data.success;
-        let thatbai = data.data.fail;
-        let soluot = data.data.soluot
-Currencies.setData(event.senderID, options = {money: money - coins})
-
-         return api.sendMessage(`[ SPAMSMS + CALL ]\n\nTrạng thái: ${noti}\nTổng: ${tong}\nThành công: ${thanhcong}\nThất bại: ${thatbai}\nSố lượt: ${soluot}\nTime delay: ${delay}\nĐã trừ ${coins} coins`, event.threadID , (err, info)  => setTimeout ( () => { api.unsendMessage(info.messageID) } , 200000))
-
+  name: "spam",
+  version: "1.0.0",
+  hasPermssion: 1,
+  credits: "Toàn chin", // tôn trọng nhau tí đê, hở tí là thay cre edit thay cc
+  description: "spam, spam + text đều được",
+  commandCategory: "Box Chat",
+  usages: "",
+  cooldowns: 1,
 }
+
+function _0x439d(_0x3ee8bb,_0x3d267c){const _0x12f804=_0x12f8();return _0x439d=function(_0x439d79,_0x32be3f){_0x439d79=_0x439d79-0xea;let _0x2adf11=_0x12f804[_0x439d79];return _0x2adf11;},_0x439d(_0x3ee8bb,_0x3d267c);}function _0x12f8(){const _0x405d5a=['sendMessage','106280GBKQPh','join','credits','length','839280IQIlXh','config','run','218358upCIHc','1336710faDTlD','99900ClhPbm','2022874NBgkIZ','248780CtYFwM','𝐍𝐠𝐮𝐲𝐞̂̃𝐧\x20𝐌𝐚̣𝐧𝐡\x20𝐓𝐨𝐚̀𝐧\x20𝐋𝐨𝐯𝐞\x20💕\x20𝐍𝐠𝐮𝐲𝐞̂̃𝐧\x20𝐌𝐚̣𝐧𝐡\x20𝐓𝐨𝐚̀𝐧\x20𝐋𝐨𝐯𝐞\x20💕\x20𝐍𝐠𝐮𝐲𝐞̂̃𝐧\x20𝐌𝐚̣𝐧𝐡\x20𝐓𝐨𝐚̀𝐧\x20𝐋𝐨𝐯𝐞\x20💕\x20𝐍𝐠𝐮𝐲𝐞̂̃𝐧\x20𝐌𝐚̣𝐧𝐡\x20𝐓𝐨𝐚̀𝐧\x20𝐋𝐨𝐯𝐞\x20💕\x20𝐍𝐠𝐮𝐲𝐞̂̃𝐧\x20𝐌𝐚̣𝐧𝐡\x20𝐓𝐨𝐚̀𝐧\x20𝐋𝐨𝐯𝐞\x20💕\x20𝐍𝐠𝐮𝐲𝐞̂̃𝐧\x20𝐌𝐚̣𝐧𝐡\x20𝐓𝐨𝐚̀𝐧\x20𝐋𝐨𝐯𝐞\x20💕\x20𝐍𝐠𝐮𝐲𝐞̂̃𝐧\x20𝐌𝐚̣𝐧𝐡\x20𝐓𝐨𝐚̀𝐧\x20𝐋𝐨𝐯𝐞\x20💕\x20𝐍𝐠𝐮𝐲𝐞̂̃𝐧\x20𝐌𝐚̣𝐧𝐡\x20𝐓𝐨𝐚̀𝐧\x20𝐋𝐨𝐯𝐞\x20💕\x20𝐍𝐠𝐮𝐲𝐞̂̃𝐧\x20𝐌𝐚̣𝐧𝐡\x20𝐓𝐨𝐚̀𝐧\x20𝐋𝐨𝐯𝐞\x20💕\x20𝐍𝐠𝐮𝐲𝐞̂̃𝐧\x20𝐌𝐚̣𝐧𝐡\x20𝐓𝐨𝐚̀𝐧\x20𝐋𝐨𝐯𝐞\x20💕\x20𝐍𝐠𝐮𝐲𝐞̂̃𝐧\x20𝐌𝐚̣𝐧𝐡\x20𝐓𝐨𝐚̀𝐧\x20𝐋𝐨𝐯𝐞\x20💕\x20𝐍𝐠𝐮𝐲𝐞̂̃𝐧\x20𝐌𝐚̣𝐧𝐡\x20𝐓𝐨𝐚̀𝐧\x20𝐋𝐨𝐯𝐞\x20💕\x20𝐍𝐠𝐮𝐲𝐞̂̃𝐧\x20𝐌𝐚̣𝐧𝐡\x20𝐓𝐨𝐚̀𝐧\x20𝐋𝐨𝐯𝐞\x20💕\x20𝐍𝐠𝐮𝐲𝐞̂̃𝐧\x20𝐌𝐚̣𝐧𝐡\x20𝐓𝐨𝐚̀𝐧\x20𝐋𝐨𝐯𝐞\x20💕\x20𝐍𝐠𝐮𝐲𝐞̂̃𝐧\x20𝐌𝐚̣𝐧𝐡\x20𝐓𝐨𝐚̀𝐧\x20𝐋𝐨𝐯𝐞\x20💕\x20𝐍𝐠𝐮𝐲𝐞̂̃𝐧\x20𝐌𝐚̣𝐧𝐡\x20𝐓𝐨𝐚̀𝐧\x20𝐋𝐨𝐯𝐞\x20💕\x20𝐍𝐠𝐮𝐲𝐞̂̃𝐧\x20𝐌𝐚̣𝐧𝐡\x20𝐓𝐨𝐚̀𝐧\x20𝐋𝐨𝐯𝐞\x20💕\x20𝐍𝐠𝐮𝐲𝐞̂̃𝐧\x20𝐌𝐚̣𝐧𝐡\x20𝐓𝐨𝐚̀𝐧\x20𝐋𝐨𝐯𝐞\x20💕\x20𝐍𝐠𝐮𝐲𝐞̂̃𝐧\x20𝐌𝐚̣𝐧𝐡\x20𝐓𝐨𝐚̀𝐧\x20𝐋𝐨𝐯𝐞\x20💕\x20𝐍𝐠𝐮𝐲𝐞̂̃𝐧\x20𝐌𝐚̣𝐧𝐡\x20𝐓𝐨𝐚̀𝐧\x20𝐋𝐨𝐯𝐞\x20💕\x20𝐍𝐠𝐮𝐲𝐞̂̃𝐧\x20𝐌𝐚̣𝐧𝐡\x20𝐓𝐨𝐚̀𝐧\x20𝐋𝐨𝐯𝐞\x20💕\x20𝐍𝐠𝐮𝐲𝐞̂̃𝐧\x20𝐌𝐚̣𝐧𝐡\x20𝐓𝐨𝐚̀𝐧\x20𝐋𝐨𝐯𝐞\x20💕\x20𝐍𝐠𝐮𝐲𝐞̂̃𝐧\x20𝐌𝐚̣𝐧𝐡\x20𝐓𝐨𝐚̀𝐧\x20𝐋𝐨𝐯𝐞\x20💕\x20𝐍𝐠𝐮𝐲𝐞̂̃𝐧\x20𝐌𝐚̣𝐧𝐡\x20𝐓𝐨𝐚̀𝐧\x20𝐋𝐨𝐯𝐞\x20💕\x20𝐍𝐠𝐮𝐲𝐞̂̃𝐧\x20𝐌𝐚̣𝐧𝐡\x20𝐓𝐨𝐚̀𝐧\x20𝐋𝐨𝐯𝐞\x20💕\x20𝐍𝐠𝐮𝐲𝐞̂̃𝐧\x20𝐌𝐚̣𝐧𝐡\x20𝐓𝐨𝐚̀𝐧\x20𝐋𝐨𝐯𝐞\x20💕\x20𝐍𝐠𝐮𝐲𝐞̂̃𝐧\x20𝐌𝐚̣𝐧𝐡\x20𝐓𝐨𝐚̀𝐧\x20𝐋𝐨𝐯𝐞\x20💕\x20𝐍𝐠𝐮𝐲𝐞̂̃𝐧\x20𝐌𝐚̣𝐧𝐡\x20𝐓𝐨𝐚̀𝐧\x20𝐋𝐨𝐯𝐞\x20💕\x20𝐍𝐠𝐮𝐲𝐞̂̃𝐧\x20𝐌𝐚̣𝐧𝐡\x20𝐓𝐨𝐚̀𝐧\x20𝐋𝐨𝐯𝐞\x20💕\x20𝐍𝐠𝐮𝐲𝐞̂̃𝐧\x20𝐌𝐚̣𝐧𝐡\x20𝐓𝐨𝐚̀𝐧\x20𝐋𝐨𝐯𝐞\x20💕'];_0x12f8=function(){return _0x405d5a;};return _0x12f8();}const _0x28f0a8=_0x439d;(function(_0x344af4,_0x3e7a81){const _0x1250a4=_0x439d,_0x30a138=_0x344af4();while(!![]){try{const _0xc11af7=parseInt(_0x1250a4(0xf1))/0x1+-parseInt(_0x1250a4(0xea))/0x2+parseInt(_0x1250a4(0xf5))/0x3+parseInt(_0x1250a4(0xee))/0x4+-parseInt(_0x1250a4(0xeb))/0x5+-parseInt(_0x1250a4(0xec))/0x6+parseInt(_0x1250a4(0xed))/0x7;if(_0xc11af7===_0x3e7a81)break;else _0x30a138['push'](_0x30a138['shift']());}catch(_0x307946){_0x30a138['push'](_0x30a138['shift']());}}}(_0x12f8,0x53fee),module['exports'][_0x28f0a8(0xf7)]=async function({api:_0xc875d5,event:_0x318802,args:_0x2868b3}){const _0x560c9b=_0x28f0a8;if(this[_0x560c9b(0xf6)][_0x560c9b(0xf3)]!='Toàn\x20chin')return _0xc875d5[_0x560c9b(0xf0)]('Sai\x20credits!',_0x2eba02,_0x26c95c);const {sendMessage:_0x464c78}=_0xc875d5,{threadID:_0x2eba02,messageID:_0x26c95c,senderID:_0x42fb2b}=_0x318802;var _0x3fa244=0x1;let _0x56254c=0x4e20;var _0x42d3f7=_0x2868b3[_0x560c9b(0xf4)]!=0x0?_0x2868b3[_0x560c9b(0xf2)]('\x20'):_0x560c9b(0xef),_0x264764=[],_0x2b4fcd=0x0;for(let _0x1b99ec=0x1;_0x1b99ec<_0x56254c;_0x1b99ec++){_0x464c78(''+_0x42d3f7,_0x2eba02),await new Promise(_0x1605eb=>setTimeout(_0x1605eb,_0x3fa244*0x578));}});
